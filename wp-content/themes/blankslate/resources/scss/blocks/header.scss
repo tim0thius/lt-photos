@@ -1,0 +1,16 @@
+#block-header {
+	@include flex(center, center, column);
+	height: 200px;
+}
+
+#block-header--menu {
+	& #menu-menu-1 {
+		@include flex(center, center, row);
+		min-height: 100px;
+	}
+
+	& .sub-menu {
+		display: none;
+	} 
+	
+}
