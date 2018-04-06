@@ -1,10 +1,5 @@
 <?php get_header(); ?>
-<section id="content" role="main">
-@wpposts
-@include( 'templates/blocks/masthead' )
-@wpempty
-    <p>404</p>
-@wpend
-<?php get_template_part( 'nav', 'below' ); ?>
-</section>
+<div id="splash" >
+	<img src="wp-content/themes/blankslate/assets/img/logo_splash.png" alt="">
+</div>
 <?php get_footer(); ?>
