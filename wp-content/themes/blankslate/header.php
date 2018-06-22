@@ -4,26 +4,27 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Glass+Antiqua|Grand+Hotel|Nixie+One|Special+Elite" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
     <div id="wrapper" class="hfeed">
-        <header id="block-header" role="banner">
-            <section id="block-header--branding">
-                <div id="block-header--site-title">
+        <header class="block-header" role="banner">
+            <section class="block-header--branding">
+                <div class="block-header--site-title">
                     <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
-                        <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">                
+                        <img class="block-header__logo" src="/wp-content/themes/blankslate/assets/img/logo.png" alt="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>">
                     </a>
                     <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
                 </div>
-                <div id="block-header--site-description">
+                <div class="block-header--site-description">
                     <?php bloginfo( 'description' ); ?>
                 </div>
             </section>
-            <nav id="block-header--menu" role="navigation">
+            <nav class="block-header--menu" role="navigation">
                 <!-- <div id="search">
 		<?php //get_search_form(); ?>
 		</div> -->

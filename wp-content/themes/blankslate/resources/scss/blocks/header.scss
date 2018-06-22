@@ -1,16 +1,39 @@
-#block-header {
+.block-header {
 	@include flex(center, center, column);
-	height: 200px;
+	height: 250px;
 }
 
-#block-header--menu {
-	& #menu-menu-1 {
+.block-header--menu {
+	#menu-menu-1 {
 		@include flex(center, center, row);
-		min-height: 100px;
+		min-height: 80px;
 	}
 
-	& .sub-menu {
+	.sub-menu {
 		display: none;
 	} 
+
+	.menu-item a {
+		color: $DARK_GREY;
+		font-size: 18px;
+		font-family: 'Glass Antiqua';
+		font-weight: 100;
+		letter-spacing: .2em;
+		text-decoration: none;
+		text-transform: lowercase;
+		margin: 10px 20px;
+	}
 	
+}
+
+.block-header__logo {
+	max-width: 250px;
+	opacity: .8;
+}
+.block-header--site-title {
+	a {
+		display: block;
+		text-align: center;
+
+	}
 }
