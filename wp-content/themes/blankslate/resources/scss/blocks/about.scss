@@ -1,0 +1,87 @@
+.block-about {
+	padding: 60px 0;
+
+	.grid__container {
+		@include flex(center, center, row);
+	}
+	.grid {
+		display: flex;
+		align-items: stretch;
+	}
+}
+.block-about__imagebox {
+	padding-bottom: 85%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: 5px solid #fff;
+}
+.block-about__content {
+	@include flex(center, center, row);
+	height: 100%;
+}
+.block-about__content-inner {
+	padding: 60px 60px 60px 120px;
+	position: relative;
+}
+.block-about__label {
+	color: $PINK;
+	font-family: 'Special Elite';
+	position: absolute;
+	left: -60px;
+	top: 170px;
+	transform: rotate(-90deg);
+	font-size: 32px;
+	margin-bottom: 30px;
+}
+.block-about__headline {
+	color: $DARK_GREY;
+	font-family: 'Special Elite';
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+.block-about__subheadline {
+	color: $GREY;
+	display: block;
+	font-family: 'Grand Hotel';
+	font-size: 26px;
+	margin-bottom: 5px;
+}
+.block-about__summary {
+	font-family: 'Nixie One';
+	font-size: 16px;
+	line-height: 34px;
+	margin-bottom: 20px;
+}
+.block-about__readmore {
+	color: $YELLOW;
+	font-family: 'Grand Hotel';
+	font-size: 24px;
+	line-height: 34px;
+	text-decoration: none;
+}
+
+#block-hero-content--about {
+	.grid__super-container {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+	}
+	.grid__container {
+		width: 100%;
+	}
+	.block-about__content-inner {
+		padding-bottom: 90px;
+	}
+	.block-about__content {
+		color: #fff;
+		max-width: 500px;
+
+		span, h2, p, a {
+			color: inherit !important;
+		}
+		.block-about__label {
+			top: 187px;
+		}
+	}
+}

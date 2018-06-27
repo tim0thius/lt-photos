@@ -5,6 +5,9 @@
 	# helpers
 	require_once('functions/helpers.php');
 
+	# styles
+	require_once('functions/styles.php');
+
 	# scripts
 	require_once('functions/scripts.php');
 

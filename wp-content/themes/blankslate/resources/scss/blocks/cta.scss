@@ -1,0 +1,16 @@
+.block-cta {
+	padding: 90px 0;
+
+	.grid__container {
+		@include flex(center, center, row);
+	}
+}
+.block-cta__headline {
+	font-family: 'Nixie One';
+	font-size: 28px;
+	letter-spacing: .05em;
+}
+.block-cta__button {
+	font-family: 'Grand Hotel';
+	margin-left: 30px;
+}

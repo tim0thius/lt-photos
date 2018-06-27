@@ -84,7 +84,7 @@ $mobile-first:          true !default;
 /**
  * Set the spacing between your grid items.
  */
-$gutter:                24px !default;
+$gutter:                30px !default;
 
 
 /**
@@ -703,4 +703,16 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
         }
     }
 
+}
+
+// *******************
+// Custom grid classes
+// *******************
+.grid__container {
+    margin: 0 auto;
+    max-width: 1300px;
+}
+.grid__super-container {
+    margin: 0 auto;
+    max-width: 1800px;
 }
