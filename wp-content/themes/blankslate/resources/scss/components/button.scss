@@ -8,3 +8,23 @@
 	text-align: center;
 	text-decoration: none;
 }
+
+.component-button--close {
+	color: #ddd;
+	cursor: pointer;
+	font-size: 36px;
+	margin-right: 30px;
+	margin-top: 8px;
+
+	&:hover {
+		color: $GREY;
+	}
+
+    @media screen and ( min-width: 767px  ) {
+    	font-size: 60px;
+    	margin: 0;
+		position: fixed;
+		top: 60px;
+		right: 60px;
+    }
+}

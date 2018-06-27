@@ -2,7 +2,7 @@
 	<div class="grid__super-container">
 		<div class="block-hero__slideshow">
 		    @if( $hero_images )
-					    <div class="block-gallery__slider slider" >
+					    <div class="block-hero__slider slider" >
 					        @foreach( $hero_images as $image )
 					            <div>
 					            	<img data-lazy="{{$image['url']}}" alt="{{the_title()}}">

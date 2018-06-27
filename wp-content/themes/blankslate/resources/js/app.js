@@ -1,22 +1,31 @@
 require('jquery');
 
 jQuery(document).ready(function ($) {
-	console.log('test')
-	$('.action--show-gallery').click(function(){
-		$('body').addClass('state--gallery-visible')
+	$('.action--show-slideshow').click(function(e){
+		var initialSlideIndex = $(this).attr('data-index') - 1 + 1 // no idea why this works
+
+			$(".block-gallery__slider").slick({
+			  // normal options...
+			  initialSlide: initialSlideIndex,
+			  infinite: true,
+			  dots: true, 
+			  adaptiveHeight: true
+			});
+
+		$('body').addClass('state--slideshow-visible')
 	})
 
-	$('.action--hide-gallery').click(function(){
-		$('body').removeClass('state--gallery-visible')
+	$('.action--hide-slideshow').click(function(){
+		$('body').removeClass('state--slideshow-visible')
+		$('.block-gallery__slider').slick('unslick');
 	})
 
-	$(".slider").slick({
+	$(".block-hero__slider").slick({
  
 	  // normal options...
 	  infinite: true,
 	  dots: false,
 	  lazyload: 'ondemand',
-	 
 	  // the magic
 	  responsive: [{
 	 
@@ -41,6 +50,7 @@ jQuery(document).ready(function ($) {
 	      settings: "unslick" // destroys slick
 	 
 	    }]
-	});
+	});	
+
 	$('section.block-hero-content').last().addClass('last');
 })

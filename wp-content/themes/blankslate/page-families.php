@@ -1,45 +1,49 @@
 <?php get_header(); ?>
 <?php
+   $args = array('post_type' => 'gallery');
+   $category_posts = new WP_Query($args);
 ?>
-<section id="section-gallery" role="main">
-
+<section id="block-gallery--families" class="block-gallery" role="main">
+<div class="grid__container">
+	<div class="grid grid--narrow">
 <!-- slideshows -->
-@wpquery(array('post_type' => 'gallery'))
 
 <?php
-$images = get_field('gallery');
-$size = 'full';
+// $images = get_field('gallery');
+// $size = 'full';
 ?>
-	<div class="block-gallery">
-	    <h2 class="block-gallery__title">{{the_title()}}</h2 >
-	    {{ the_post_thumbnail('thumbnail', ['class' => 'action--show-gallery', 'title' => the_title()]); }}
-	    <p class="block-gallery__excerpt" >{{the_excerpt()}}</p>
-	    @if( $images )
-		    <div class="block-gallery__slider-backdrop" >
-			    <div class="block-gallery__slider-container" >
-				    <div class="block-gallery__slider slider" >
-				        @foreach( $images as $image )
-				            <div>
-				            	<img data-lazy="{{$image['url']}}" alt="{{the_title()}}">
-				            </div>
-				        @endforeach
-				    </div>
-			    </div>
-			    <a class="block-gallery__slider-close action--hide-gallery">X</a>
-		    </div>
-		@endif
-	</div>	
-@wpempty
-    <li>{{ __('Sorry, no posts matched your criteria.') }}</li>
-@wpend
 
-<!-- page content -->
+<?php
+
+				   if($category_posts->have_posts()) : 
+				   	$counter = 0;
+				      while($category_posts->have_posts()) : 
+				         $category_posts->the_post();			    
+				?><!-- 
+				 --><div class="grid__item one-third palm--one-whole">
+					@include( 'templates/cards/gallery-item' )	
+				</div><!-- 
+				 --><?php
+				 		$counter ++;
+				         if($counter == 6){break;}
+				      endwhile;
+				   else: 
+				?>
+				    Oops, there are no posts.
+				<?php
+				   endif;
+				?>
+
+	<!-- page content -->
+	</div>
+</div>
 </section>
-<section id="content" role="main">
+@include( 'templates/blocks/cta', ['cta_id' => 'session'] )
+<section id="content" role="main" style="display:none;" >
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="header">
-			<h1 class="entry-title">{{the_title()}} </h1>  {{edit_post_link()}}
+			<h1 class="entry-title">{{the_title()}} </h1>
 		</header>
 		<section class="entry-content">
 			<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
